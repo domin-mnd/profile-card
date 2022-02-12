@@ -1,0 +1,16 @@
+{
+  "name": "profile-card-by-domin",
+  "version": "1.0.0",
+  "description": "My profile card<3",
+  "main": "index.js",
+  "author": "Domin",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm install && node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "serve-favicon": "^2.5.0"
+  },
+  "keywords": []
+}
