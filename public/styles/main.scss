@@ -1,0 +1,36 @@
+/*
+
+Profile card made by Domin,
+please do not modify anything but _colors.scss
+as it may lead to UI issues that I'm not responsible for.
+
+CSS last updated: 17th August 2022
+
+*/
+
+// Basic styling
+@import "./base";
+
+// Animated background styling
+@import "./background";
+
+// Body and card styling
+@import "./body";
+
+// Upper interface styling: avatar, status, badges, username and user tag
+@import "./user";
+
+// Middle interface styling: content
+@import "./content";
+
+// Role box styling
+@import "./roles";
+
+// Social media box styling
+@import "./socials";
+
+// Role colors (more at README.md)
+@import "./colors";
+
+// Mobile user interface styling
+@import "./mobile";

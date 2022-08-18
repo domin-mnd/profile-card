@@ -1,0 +1,426 @@
+/*
+
+Profile card made by Domin,
+please do not modify anything but _colors.scss
+as it may lead to UI issues that I'm not responsible for.
+
+CSS last updated: 17th August 2022
+
+*/
+a {
+  color: #00aff4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.text-base {
+  overflow-wrap: break-word;
+  font-size: 13px;
+  line-height: 20px;
+  color: #dcddde;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    -webkit-transform: translateY(-1000px) rotate(720deg);
+            transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    -webkit-transform: translateY(-1000px) rotate(720deg);
+            transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: #23272a;
+  overflow: hidden;
+}
+
+.background li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-animation: animate 21s linear infinite;
+          animation: animate 21s linear infinite;
+}
+
+.background li:nth-child(0) {
+  left: 48%;
+  width: 142px;
+  height: 142px;
+  bottom: -142px;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.background li:nth-child(1) {
+  left: 78%;
+  width: 178px;
+  height: 178px;
+  bottom: -178px;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.background li:nth-child(2) {
+  left: 73%;
+  width: 169px;
+  height: 169px;
+  bottom: -169px;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.background li:nth-child(3) {
+  left: 30%;
+  width: 191px;
+  height: 191px;
+  bottom: -191px;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.background li:nth-child(4) {
+  left: 83%;
+  width: 186px;
+  height: 186px;
+  bottom: -186px;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.background li:nth-child(5) {
+  left: 29%;
+  width: 167px;
+  height: 167px;
+  bottom: -167px;
+  -webkit-animation-delay: 21s;
+          animation-delay: 21s;
+}
+
+.background li:nth-child(6) {
+  left: 20%;
+  width: 133px;
+  height: 133px;
+  bottom: -133px;
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+}
+
+.background li:nth-child(7) {
+  left: 29%;
+  width: 124px;
+  height: 124px;
+  bottom: -124px;
+  -webkit-animation-delay: 24s;
+          animation-delay: 24s;
+}
+
+.background li:nth-child(8) {
+  left: 2%;
+  width: 136px;
+  height: 136px;
+  bottom: -136px;
+  -webkit-animation-delay: 11s;
+          animation-delay: 11s;
+}
+
+body {
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #36393f;
+  border-top: 15px solid #202225;
+}
+
+.profile {
+  z-index: 1;
+  position: relative;
+  background-color: #18191c;
+  overflow: hidden;
+  width: 600px;
+  color: white;
+  border-radius: 8px;
+  margin: 5% auto;
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(32, 34, 37, 0.6);
+          box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(32, 34, 37, 0.6);
+}
+
+.profile .header {
+  padding: 74px 16px 12px 16px;
+}
+
+.profile .banner {
+  height: 120px;
+  background-color: #020c08;
+}
+
+.avatar {
+  background-color: #18191c;
+  padding: 8px;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  top: 52px;
+  left: 16px;
+}
+
+.avatar img {
+  width: 120px;
+  border-radius: 50%;
+}
+
+.status {
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+  position: absolute;
+  background-color: #18191c;
+  bottom: 14.64%;
+  right: 14.64%;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.status img {
+  width: 24px;
+}
+
+.badges {
+  position: absolute;
+  top: 136px;
+  left: 160px;
+  right: 16px;
+}
+
+.badges * {
+  width: 24px;
+  height: 24px;
+}
+
+.username {
+  font-size: 20px;
+}
+
+.username .text-username {
+  font-weight: 700;
+}
+
+.username .text-discriminator {
+  color: #b9bbbe;
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+.highlight-best-link {
+  color: #64da60;
+}
+
+.highlight-best-link:hover {
+  color: #84fe80;
+}
+
+.text-status {
+  margin: 0 16px 0px 16px;
+  color: #b9bbbe;
+}
+
+.divider {
+  height: 1px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.body {
+  padding: 0 20px 16px 20px;
+}
+
+.body .title-body {
+  font-weight: 700;
+  color: #b9bbbe;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+
+.body .roles-body {
+  margin-top: 15px;
+}
+
+.about-section {
+  margin-bottom: 16px;
+}
+
+.roles-body {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.roles-body .rol {
+  border-radius: 4px;
+  background: #292b2f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 4px 4px 0;
+  padding: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 22px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.roles-body .rol span {
+  color: white;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.social-divider {
+  margin-bottom: 0;
+}
+
+.socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.platform {
+  width: 244px;
+  background-color: #202225;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.platform-username {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.platform-image {
+  width: 20px;
+  height: 20px;
+}
+
+.connect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  -webkit-filter: invert(86%) sepia(5%) saturate(136%) hue-rotate(177deg) brightness(90%) contrast(82%);
+          filter: invert(86%) sepia(5%) saturate(136%) hue-rotate(177deg) brightness(90%) contrast(82%);
+}
+
+.connect:hover {
+  -webkit-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+.fuchsia {
+  color: #eb459e;
+}
+
+.pink {
+  color: #f9ccd3;
+}
+
+.yellow {
+  color: #fe9402;
+}
+
+.green {
+  color: #76a43d;
+}
+
+@media only screen and (max-device-width: 640px) {
+  .profile {
+    width: 300px;
+  }
+  .profile .banner {
+    height: 60px;
+  }
+  .badges {
+    top: 76px;
+    left: 120px;
+  }
+  .avatar {
+    top: 16px;
+  }
+  .avatar img {
+    width: 80px;
+  }
+  .status img {
+    width: 16px;
+  }
+  .profile .header {
+    padding: 56px 16px 12px 16px;
+  }
+  .body {
+    padding: 0 16px 16px 16px;
+  }
+  .text-status {
+    color: #dcddde;
+  }
+  .socials {
+    display: block;
+  }
+  .platform {
+    width: 244.4px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,32 @@
+.highlight-best-link {
+    color: #64da60;
+    &:hover {
+        color: #84fe80;
+    }
+}
+.text-status {
+    margin: 0 16px 0px 16px;
+    color: #b9bbbe;
+}
+.divider {
+    height: 1px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background-color: hsla(0,0%,100%,0.06);
+}
+.body {
+    padding: 0 20px 16px 20px;
+    .title-body {
+        font-weight: 700;
+        color: #b9bbbe;
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 8px;
+    }
+    .roles-body{
+        margin-top: 15px;
+    }
+}
+.about-section {
+    margin-bottom: 16px;
+}
