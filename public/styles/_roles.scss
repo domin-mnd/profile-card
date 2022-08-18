@@ -1,0 +1,21 @@
+.roles-body {
+    flex-wrap: wrap;
+    display: flex;
+    .rol {
+        border-radius: 4px;
+        background: #292b2f;
+        display: flex;
+        align-items: center;
+        margin: 0 4px 4px 0;
+        padding: 4px;
+        box-sizing: border-box;
+        height: 22px;
+        font-size: 12px;
+        font-weight: 500;
+        span {
+            color: white;
+            margin-left: 4px;
+            margin-right: 4px;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.social-divider {
+    margin-bottom: 0;
+}
+.socials {
+    display: flex;
+    justify-content: space-between;
+}
+.platform {
+    width: 244px;
+    background-color: #202225;
+    display: flex;
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 4px;
+    align-items: center;
+}
+.platform-username {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 10px;
+    flex-grow: 1;
+}
+.platform-image {
+    width: 20px;
+    height: 20px;
+}
+.connect {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    filter: invert(86%) sepia(5%) saturate(136%) hue-rotate(177deg) brightness(90%) contrast(82%);
+    &:hover {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    }
+}

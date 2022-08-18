@@ -1,0 +1,13 @@
+a {
+    color: #00aff4;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.text-base {
+    overflow-wrap: break-word;
+    font-size: 13px;
+    line-height: 20px;
+    color: #dcddde;
+}

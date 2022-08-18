@@ -1,0 +1,35 @@
+@media only screen and (max-device-width: 640px) {
+    .profile {
+        width: 300px;
+        .banner {
+            height: 60px;
+        }
+    }
+    .badges {
+        top: 76px; left: 120px;
+    }
+    .avatar {
+        top: 16px;
+        img {
+            width: 80px;
+        }
+    }
+    .status img {
+        width: 16px;
+    }
+    .profile .header {
+        padding: 56px 16px 12px 16px;
+    }
+    .body {
+        padding: 0 16px 16px 16px;
+    }
+    .text-status {
+        color: #dcddde;
+    }
+    .socials {
+        display: block;
+    }
+    .platform {
+        width: 244.4px;
+    }
+}
