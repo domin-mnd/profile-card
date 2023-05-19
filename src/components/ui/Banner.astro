@@ -22,7 +22,7 @@ const { href, color } = Astro.props;
         class="image"
         class:list={["image", "banner"]}
         src={href}
-        widths={[600]}
+        widths={[600, 1200]}
         aspectRatio="150:53"
         alt="banner"
       />
@@ -53,4 +53,11 @@ const { href, color } = Astro.props;
 
   .image
     height: rem(212)
+    object-fit: cover
+
+    @media screen and (max-width: rem(500))
+      height: rem(170)
+    
+    @media screen and (max-width: rem(410))
+      height: rem(140)
 </style>
