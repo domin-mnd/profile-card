@@ -6,7 +6,7 @@ import Tooltip from "./Tooltip.astro";
 interface Props {
   type: Connection;
   username: string;
-  url: string;
+  url?: string;
 }
 
 const typeLabels = {
@@ -38,7 +38,7 @@ const { type, username, url } = Astro.props;
   <Flex align="center" gap={8}>
     <Tooltip label={typeLabels[type]}>
       <img
-        src={`/connection/${type}.svg`}
+        src={`/connections/${type}.svg`}
         alt={`Connection - ${type}`}
         width={24}
         height={24}
@@ -47,7 +47,7 @@ const { type, username, url } = Astro.props;
     </Tooltip>
     <span class="username">{username}</span>
   </Flex>
-  <Link href={url} />
+  {url && <Link href={url} />}
 </Flex>
 <style lang="sass">
   @use "src/styles/utils/conversion" as *
