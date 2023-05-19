@@ -14,7 +14,7 @@ displayName: "Domin"
 username: "Domin#2874"
 # Discord status, can be "online-mobile", "online", "idle", "do-not-disturb", "invisible" or "streaming"
 status: "online"
-# Badges next to avatar, some badges need metadata such as "date" or "username", all name are available at public/badges folder
+# Badges next to avatar, some badges need metadata such as "date" or "username", all name are available at public/badges/margins folder
 badges:
   "hypesquad-balance": 
   "active-developer":
