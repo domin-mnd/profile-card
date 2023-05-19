@@ -1,0 +1,36 @@
+---
+import Badge from "@component/ui/Badge.astro";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  badges: Badges;
+}
+
+const { badges, class: additionalClass, ...props } = Astro.props;
+---
+
+<div class:list={["badge-wrapper", additionalClass]} {...props}>
+  {
+    (Object.keys(badges) as Badge[]).map((key) => (
+      <Badge
+        type={key}
+        metadata={badges[key]?.date ?? badges[key]?.username}
+      />
+    ))
+  }
+</div>
+<style lang="sass">
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/rounding"
+  @use "src/styles/theme/space"
+
+  .badge-wrapper
+    display: flex
+    flex-wrap: wrap
+
+    border-radius: rounding.$sm-8
+
+    background-color: colors.$content
+    padding: space.$xs-2 space.$sm-4
+    gap: space.$xs-2
+</style>

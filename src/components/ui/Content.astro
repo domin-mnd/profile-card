@@ -1,0 +1,19 @@
+<div class="card">
+  <slot />
+</div>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/rounding"
+  @use "src/styles/theme/space"
+
+  .card
+    max-height: rem(385)
+
+    padding: space.$md-12 space.$md-12 0
+    
+    background-color: colors.$content
+    border-radius: rounding.$sm-8
+
+    overflow: hidden
+</style>

@@ -1,0 +1,56 @@
+---
+import { Picture } from "@astrojs/image/components";
+
+interface HrefOnly {
+  color?: never;
+  href: string;
+}
+interface ColorOnly {
+  color: string;
+  href?: never;
+}
+
+type Props = HrefOnly | ColorOnly;
+
+const { href, color } = Astro.props;
+---
+
+<div class="upper">
+  {
+    href ? (
+      <Picture
+        class="image"
+        class:list={["image", "banner"]}
+        src={href}
+        widths={[600]}
+        aspectRatio="150:53"
+        alt="banner"
+      />
+    ) : (
+      <div class:list={["color", "banner"]} />
+    )
+  }
+</div>
+
+
+<style lang="sass" define:vars={{ color }}>
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/space"
+
+  .upper
+    box-sizing: border-box
+
+  .banner
+    margin: - space.$md-16
+    margin-bottom: space.$md-16
+    max-width: calc(100% + space.$lg-32)
+
+  .color
+    background-color: var(--color)
+    width: calc(100% + space.$lg-32)
+    aspect-ratio: 300 / 53
+    height: rem(106)
+
+  .image
+    height: rem(212)
+</style>

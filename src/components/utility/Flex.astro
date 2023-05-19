@@ -1,0 +1,25 @@
+---
+import { rem } from '@util/units/rem';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  justify?: string;
+  align?: string;
+  wrap?: string;
+  gap?: number;
+}
+
+const { justify, align, wrap, gap, class: additionalClass, ...props } = Astro.props;
+---
+
+<div class="flex" class:list={["flex", additionalClass]} {...props}>
+  <slot />
+</div>
+<style lang="sass" define:vars={{ justify, align, wrap, gap: rem(gap ?? 0) }}>
+  .flex
+    display: flex
+    justify-content: var(--justify)
+    align-items: var(--align)
+    flex-wrap: var(--wrap)
+    gap: var(--gap)
+</style>

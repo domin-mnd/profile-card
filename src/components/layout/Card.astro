@@ -1,0 +1,28 @@
+---
+import Flex from "@component/utility/Flex.astro";
+
+---
+
+<Flex class="card">
+	<slot />
+</Flex>
+<style lang="sass">
+	@use "src/styles/utils/conversion" as *
+	@use "src/styles/theme/colors"
+	@use "src/styles/theme/space"
+	@use "src/styles/theme/rounding"
+
+	.card
+		flex-direction: column
+
+		max-width: rem(600)
+		overflow: hidden
+
+		margin: 2% auto
+		padding: space.$md-16
+
+		border-radius: rounding.$sm-8
+
+		background-color: colors.$card
+		color: colors.$white
+</style>

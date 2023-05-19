@@ -1,0 +1,30 @@
+---
+import { rem } from "@util/units/rem";
+
+interface Props {
+  top?: number;
+  bottom?: number;
+}
+
+const { top, bottom } = Astro.props;
+---
+
+<hr class="divider" />
+<style
+  lang="sass"
+  define:vars={{
+    top: rem(top ?? 12),
+    bottom: rem(bottom ?? 12),
+  }}
+>
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/space"
+
+  .divider
+    background-color: colors.$divider
+    border: none
+
+    height: space.$xs-1
+    margin-top: var(--top)
+    margin-bottom: var(--bottom)
+</style>

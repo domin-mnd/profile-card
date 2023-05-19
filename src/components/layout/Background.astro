@@ -1,0 +1,107 @@
+<ul class="background">
+  {/* 8 li elements */}
+  {[...Array(8).keys()].map((index) => <li id={index.toString()} />)}
+</ul>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/colors"
+
+  @keyframes waterfall
+    0%
+      transform: translateY(0) rotate(0deg)
+      opacity: 1
+      border-radius: 0
+
+    100%
+      transform: translateY(rem(-1000)) rotate(720deg)
+      opacity: 0
+      border-radius: 50%
+
+  .background
+    position: fixed
+
+    width: 100vw
+    height: 100vh
+
+    top: 0
+    left: 0
+    margin: 0
+    padding: 0
+
+    background: colors.$waterfall
+
+    overflow: hidden
+    z-index: -1
+
+    li
+      position: absolute
+      display: block
+      list-style: none
+      width: rem(20)
+      height: rem(20)
+      background: rgba(255, 255, 255, 0.2)
+      animation: waterfall 21s linear infinite
+
+      &:nth-child(0)
+        left: 48%
+        width: rem(142)
+        height: rem(142)
+        bottom: rem(-142)
+        animation-delay: 1s
+
+      &:nth-child(1)
+        left: 78%
+        width: rem(178)
+        height: rem(178)
+        bottom: rem(-178)
+        animation-delay: 1s
+
+      &:nth-child(2)
+        left: 73%
+        width: rem(169)
+        height: rem(169)
+        bottom: rem(-169)
+        animation-delay: 3s
+
+      &:nth-child(3)
+        left: 30%
+        width: rem(191)
+        height: rem(191)
+        bottom: rem(-191)
+        animation-delay: 4s
+
+      &:nth-child(4)
+        left: 83%
+        width: rem(186)
+        height: rem(186)
+        bottom: rem(-186)
+        animation-delay: 5s
+
+      &:nth-child(5)
+        left: 29%
+        width: rem(167)
+        height: rem(167)
+        bottom: rem(-167)
+        animation-delay: 21s
+
+      &:nth-child(6)
+        left: 20%
+        width: rem(133)
+        height: rem(133)
+        bottom: rem(-133)
+        animation-delay: 9s
+
+      &:nth-child(7)
+        left: 29%
+        width: rem(124)
+        height: rem(124)
+        bottom: rem(-124)
+        animation-delay: 24s
+
+      &:nth-child(8)
+        left: 2%
+        width: rem(136)
+        height: rem(136)
+        bottom: rem(-136)
+        animation-delay: 11s
+</style>

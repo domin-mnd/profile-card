@@ -1,0 +1,30 @@
+---
+import { Image } from "@astrojs/image/components";
+
+interface Props {
+  src: string;
+  class?: string;
+  size: number;
+}
+
+const { src, size, class: additionalClass } = Astro.props;
+---
+
+<Image
+  class:list={["avatar", additionalClass]}
+  src={src}
+  aspectRatio={1}
+  alt="Avatar"
+  width={size}
+  height={size}
+/>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/rounding"
+  @use "src/styles/theme/space"
+
+  .avatar
+    border-radius: rounding.$circle
+    border: rem(9) solid colors.$card
+</style>

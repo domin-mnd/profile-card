@@ -1,0 +1,33 @@
+---
+import { capitalize } from "@util/parser/capitalize";
+import Tooltip from "./Tooltip.astro";
+
+interface Props {
+  type: Status;
+  class?: string;
+}
+
+const { type, class: additionalClass } = Astro.props;
+
+const parseStatus = (status: Status): string =>
+  capitalize(
+    status
+      .replace("mobile", "")
+      .replace("-", " ")
+      .trim()
+  );
+
+const tooltip = parseStatus(type);
+---
+
+<Tooltip label={tooltip} class={additionalClass}>
+  <img src={`/status/filled/${type}.svg`} alt={tooltip} class="status" />
+</Tooltip>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/space"
+
+  .status
+    width: rem(40)
+</style>

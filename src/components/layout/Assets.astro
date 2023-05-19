@@ -1,0 +1,46 @@
+---
+import Avatar from "@component/ui/Avatar.astro";
+import Status from "@component/ui/Status.astro";
+import Flex from "@component/utility/Flex.astro";
+
+import Relative from "@component/utility/Relative.astro";
+import Badges from "./Badges.astro";
+
+interface Props {
+  avatar: string;
+  status: Status;
+  badges: Badges;
+}
+
+const { avatar, status, badges } = Astro.props;
+---
+
+<Relative class="stick">
+  <Avatar size={138} src={avatar} class="levitate" />
+  <Flex justify="flex-end" align="flex-end" class="status levitate">
+    <Status type={status} />
+  </Flex>
+  <Badges badges={badges} class="badges" />
+</Relative>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/space"
+
+  .stick
+    margin-top: - space.$md-16
+
+  .levitate
+    position: absolute
+    top: - rem(75)
+  
+  .status
+    width: rem(138)
+    height: rem(138)
+    aspect-ratio: 1 / 1
+    padding: rem(9)
+
+  .badges
+    position: absolute
+    top: rem(16)
+    left: rem(148)
+</style>

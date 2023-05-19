@@ -1,0 +1,31 @@
+@use "../theme/rounding"
+@use "../theme/space"
+  
+// Scrollbar mixin
+// Doesn't support rem conversion
+@mixin scrollbar($size, $foreground-color, $background-color)
+  // For Webkit
+  &::-webkit-scrollbar
+    width: $size
+    height: $size
+
+  &::-webkit-scrollbar-thumb
+    background: $foreground-color
+    background-clip: padding-box
+    border: space.$xs-2 solid transparent
+    border-radius: rounding.$xs-4
+
+  &::-webkit-scrollbar-track
+    background: $background-color
+
+  &
+    // For Internet Explorer
+    scrollbar-face-color: $foreground-color
+    scrollbar-track-color: $background-color
+
+    // For Firefox
+    scrollbar-color: $foreground-color $background-color
+    @if $size == 0px
+      scrollbar-width: none
+    @else if $size <= 10px
+      scrollbar-width: thin

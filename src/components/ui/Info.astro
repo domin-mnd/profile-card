@@ -1,0 +1,37 @@
+---
+interface Props {
+  username: string;
+  nickname: string;
+}
+
+const { username, nickname } = Astro.props;
+---
+
+<div class="info">
+  <div class="nickname">
+    {nickname}
+  </div>
+  <div class="username">
+    {username}
+  </div>
+</div>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/font"
+
+  .info
+    font-weight: 600
+    line-height: rem(24)
+
+    .nickname
+      color: colors.$dimmed
+      font-size: font.$md-20
+      // Same with discord's select styling
+      user-select: none
+
+    .username
+      color: colors.$dark
+      font-size: font.$sm-14
+
+</style>

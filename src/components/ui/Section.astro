@@ -1,0 +1,36 @@
+---
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+<section class="section">
+  <h4 class="label">{label}</h4>
+  <slot />
+</section>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/font"
+  @use "src/styles/theme/space"
+
+  .section
+    padding-bottom: space.$md-16
+
+    font-size: font.$sm-14
+    font-weight: 400
+
+    color: colors.$dimmed
+
+    .label
+      margin: 0 0 space.$sm-8
+      text-transform: uppercase
+
+      font-size: font.$sm-12
+      font-weight: 700
+
+      letter-spacing: rem(0.16)
+
+      color: colors.$white
+</style>

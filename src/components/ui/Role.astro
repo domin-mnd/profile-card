@@ -1,0 +1,44 @@
+---
+import Flex from "@component/utility/Flex.astro";
+
+interface Props {
+  color: string;
+}
+
+const { color } = Astro.props;
+---
+
+<Flex align="center" class="role">
+  <div class="color"></div>
+  <span><slot /></span>
+</Flex>
+<style lang="sass" define:vars={{ color }}>
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/font"
+  @use "src/styles/theme/space"
+  @use "src/styles/theme/rounding"
+
+  .role
+    width: max-content
+
+    padding: space.$sm-4 space.$sm-8
+
+    font-size: font.$sm-12
+    font-weight: 500
+    text-align: center
+
+    border-radius: rounding.$xs-4
+    background-color: colors.$role
+
+    .color
+      width: rem(12)
+      height: rem(12)
+      aspect-ratio: 1 / 1
+
+      margin-right: space.$sm-4
+
+      border-radius: rounding.$circle
+
+      background-color: var(--color)
+</style>

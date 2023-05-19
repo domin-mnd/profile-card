@@ -1,0 +1,35 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a class="link" href={href}>
+  <svg
+    aria-hidden="true"
+    role="img"
+    viewBox="0 0 24 24"
+  >
+    <polygon
+      fill="currentColor"
+      fill-rule="nonzero"
+      points="13 20 11 20 11 8 5.5 13.5 4.08 12.08 12 4.16 19.92 12.08 18.5 13.5 13 8"
+    ></polygon>
+  </svg>
+</a>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/colors"
+
+  .link
+    width: rem(18)
+    height: rem(18)
+    aspect-ratio: 1 / 1
+    color: colors.$dark
+    transform: rotate(45deg)
+
+    &:hover
+      color: colors.$dimmed
+</style>

@@ -1,0 +1,19 @@
+{
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "fmt": "prettier --write ."
+  },
+  "dependencies": {
+    "@astrojs/image": "^0.16.8",
+    "@fontsource/open-sans": "^4.5.14",
+    "astro": "^2.4.5",
+    "sass": "^1.62.1",
+    "sharp": "^0.32.1"
+  }
+}

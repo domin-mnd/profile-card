@@ -1,0 +1,75 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  label: string;
+}
+
+const { label, class: additionalClass, ...props } = Astro.props;
+---
+
+<div class:list={["tooltip-wrapper", additionalClass]} {...props}>
+  <div class="tooltip-content">
+    <div class="tooltip" role="tooltip">
+      {label}
+    </div>
+    <div class="arrow"></div>
+  </div>
+  <slot />
+</div>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/font"
+  @use "src/styles/theme/space"
+  @use "src/styles/theme/rounding"
+
+  .tooltip-wrapper
+    display: flex
+    position: relative
+    width: max-content
+
+    & .tooltip-content
+      pointer-events: none
+      position: absolute
+      z-index: 10
+      left: 50%
+
+      display: flex
+      flex-direction: column
+      align-items: center
+
+      transform: scale(.9) translate(-55%, -110%)
+      transition: transform .1s, opacity .05s ease-in
+      opacity: 0
+
+    &:hover .tooltip-content
+      transform: scale(1) translate(-50%, -100%)
+      opacity: 1
+      transition: transform .1s, opacity .05s ease-in
+
+  .tooltip
+    width: max-content
+    max-width: rem(190)
+    padding: space.$sm-8 space.$md-12
+
+    // I don't know why discord has 5 px rounding
+    // Yet they got no system for it
+    border-radius: rem(5)
+    background-color: colors.$content
+
+    color: colors.$dimmed
+    box-shadow: hsla(0, 0%, 0%, 0.2) 0 rem(8) rem(16) 0
+    // Font mismatch
+    font-size: rem(13)
+    font-weight: 500
+    line-height: font.$md-16
+
+  .arrow
+    border: rem(5) solid transparent
+    border-top-color: colors.$content
+
+    margin-top: rem(-1)
+    width: 0
+    height: 0
+</style>

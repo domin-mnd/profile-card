@@ -1,0 +1,68 @@
+---
+import Link from "@component/icons/Link.astro";
+import Flex from "@component/utility/Flex.astro";
+import Tooltip from "./Tooltip.astro";
+
+interface Props {
+  type: Connection;
+  username: string;
+  url: string;
+}
+
+const typeLabels = {
+  "paypal": "PayPal",
+  "reddit": "Reddit",
+  "steam": "Steam",
+  "tiktok": "TikTok",
+  "twitter": "Twitter",
+  "ebay": "eBay",
+  "crunchyroll": "Crunchyroll",
+  "playstation-network": "PlayStation Network",
+  "spotify": "Spotify",
+  "xbox": "Xbox",
+  "battle-net": "Battle.net",
+  "epic-games": "Epic Games",
+  "facebook": "Facebook",
+  "github": "GitHub",
+  "instagram": "Instagram",
+  "league-of-legends": "League Of Legends",
+  "riot-games": "Riot Games",
+  "twitch": "Twitch",
+  "youtube": "YouTube",
+}
+
+const { type, username, url } = Astro.props;
+---
+
+<Flex align="center" justify="space-between" class="connection">
+  <Flex align="center" gap={8}>
+    <Tooltip label={typeLabels[type]}>
+      <img
+        src={`/connection/${type}.svg`}
+        alt={`Connection - ${type}`}
+        width={24}
+        height={24}
+        class="icon"
+      />
+    </Tooltip>
+    <span class="username">{username}</span>
+  </Flex>
+  <Link href={url} />
+</Flex>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/font"
+  @use "src/styles/theme/rounding"
+  @use "src/styles/theme/space"
+
+  .connection
+    padding: space.$md-12 space.$sm-8
+
+    border-radius: rounding.$xs-4
+    border: rem(1) solid colors.$divider
+
+    .username
+      font-size: font.$md-16
+      font-weight: 600
+</style>

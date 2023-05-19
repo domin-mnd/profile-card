@@ -1,0 +1,26 @@
+<div class="scrollbar">
+  <div class="offset">
+    <slot />
+  </div>
+</div>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/utils/scrollbar" as *
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/space"
+
+  .scrollbar
+    overflow: hidden auto
+
+    max-height: rem(308)
+    padding: space.$md-16 0
+
+    width: calc(100% + space.$md-12)
+    @include scrollbar(8px, colors.$divider, transparent)
+
+    &:hover
+      scrollbar-color: hsl(225, 7.1%, 11%) transparent
+
+    .offset
+      margin-right: space.$md-12
+</style>

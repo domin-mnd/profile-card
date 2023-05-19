@@ -1,0 +1,58 @@
+---
+import Tooltip from "./Tooltip.astro";
+
+interface Props {
+  type: Badge;
+  metadata: string | undefined;
+}
+
+const tooltipLabels = {
+  "active-developer": "Active Developer",
+  "boost-1-month": "Server Boosting since",
+  "boost-2-month": "Server Boosting since",
+  "boost-3-month": "Server Boosting since",
+  "boost-6-month": "Server Boosting since",
+  "boost-9-month": "Server Boosting since",
+  "boost-12-month": "Server Boosting since",
+  "boost-15-month": "Server Boosting since",
+  "boost-18-month": "Server Boosting since",
+  "boost-24-month": "Server Boosting since",
+  "bug-hunter-lv1": "Discord Bug Hunter",
+  "bug-hunter-lv2": "Discord Bug Hunter",
+  "discord-certified-moderator-old": "Discord Certified Moderator",
+  "discord-certified-moderator": "Moderator Programmes Alumni",
+  "discord-partner-old": "Discord Partner",
+  "discord-partner": "Discord Partner",
+  "discord-staff": "Discord Staff",
+  "early-supporter": "Early Supporter",
+  "early-verified-bot-developer": "Early Verified Bot Developer",
+  "hypesquad-balance-lgbtq": "HypeSquad Balance",
+  "hypesquad-balance": "HypeSquad Balance",
+  "hypesquad-bravery-lgbtq": "HypeSquad Bravery",
+  "hypesquad-bravery": "HypeSquad Bravery",
+  "hypesquad-brilliance-lgbtq": "HypeSquad Brilliance",
+  "hypesquad-brilliance": "HypeSquad Brilliance",
+  "hypesquad-event": "HypeSquad Events",
+  "legacy-username": "Originally known as",
+  "nitro": "Subscriber since",
+  "server-owner": "Server Owner",
+  "supports-slash-commands": "Supports Commands",
+}
+
+const { type, metadata } = Astro.props;
+---
+<Tooltip label={tooltipLabels[type] + (metadata ? ` ${metadata}` : "")}>
+  <img
+    src={`/badges/margins/${type}.svg`}
+    class="badge"
+  />
+</Tooltip>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+
+  .badge
+    width: rem(24)
+    height: rem(24)
+
+    cursor: pointer
+</style>

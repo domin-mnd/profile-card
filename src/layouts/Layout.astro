@@ -1,0 +1,116 @@
+---
+// Global non-weight-scoped import only includes font-weight 400
+import "@fontsource/open-sans/400.css";
+// Weight for badges & tooltips
+import "@fontsource/open-sans/500.css";
+// Weight for username, tag & connection username
+import "@fontsource/open-sans/600.css";
+// Weight for section labels
+import "@fontsource/open-sans/700.css";
+
+import Header from "@component/layout/Header.astro";
+import Background from "@component/layout/Background.astro";
+import Card from "@component/layout/Card.astro";
+import Scrollbar from "@component/layout/Scrollbar.astro";
+
+import Divider from "@component/ui/Divider.astro";
+import Content from "@component/ui/Content.astro";
+import Section from "@component/ui/Section.astro";
+import Role from "@component/ui/Role.astro";
+import Grid from "@component/ui/Grid.astro";
+import Connection from "@component/ui/Connection.astro";
+import Info from "@component/ui/Info.astro";
+
+import Flex from "@component/utility/Flex.astro";
+import Favicon from "@component/layout/Favicon.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <Favicon />
+    <title>{frontmatter.displayName}</title>
+  </head>
+  <body>
+    <Card>
+      <Header
+        bannerType={frontmatter.bannerType}
+        banner={frontmatter.banner}
+        avatar={frontmatter.avatar}
+        status={frontmatter.status}
+        badges={frontmatter.badges}
+      />
+      <Content>
+        <Info nickname={frontmatter.displayName} username={frontmatter.username} />
+        <Divider top={16} bottom={0} />
+        <Scrollbar>
+          <Section label="About Me">
+            <main class="normalize">
+              <slot />
+            </main>
+          </Section>
+          <Section label="Roles">
+            <Flex wrap="wrap" gap={4}>
+              {
+                Object.keys(frontmatter.roles).map((role) => (
+                  <Role color={frontmatter.roles[role]}>{role}</Role>
+                ))
+              }
+            </Flex>
+          </Section>
+          <Divider top={0} />
+          <Grid>
+            {
+              Object.keys(frontmatter.connections).map((connection) => (
+                <Connection
+                  type={connection as Connection}
+                  username={frontmatter.connections[connection].username}
+                  url={frontmatter.connections[connection].url}
+                />
+              ))
+            }
+          </Grid>
+        </Scrollbar>
+      </Content>
+    </Card>
+    <Background />
+  </body>
+</html>
+<style lang="sass" is:global>
+  @use "src/styles/utils/conversion" as *
+  @use "src/styles/utils/scrollbar" as *
+  @use "sass:color"
+  @use "src/styles/theme/colors"
+  @use "src/styles/theme/space"
+
+  *
+    outline: none
+    box-sizing: border-box
+
+  html
+    font-family: "Open Sans", sans-serif
+    // Doesn't support rem conversion string
+    @include scrollbar(8px, mix(colors.$waterfall, white, 80%), colors.$waterfall)
+
+  // Content styling
+  .normalize
+    line-height: rem(20)
+
+    display: flex
+    flex-direction: column
+    gap: space.$md-12
+
+    p
+      margin: 0
+    a
+      color: colors.$link
+      text-decoration: none
+
+      &:hover
+        text-decoration: underline
+</style>

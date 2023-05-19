@@ -1,0 +1,15 @@
+<div class="grid">
+  <slot />
+</div>
+<style lang="sass">
+  @use "src/styles/theme/space"
+
+  .grid
+    display: grid
+    // 2 Columns
+    grid-template-columns: repeat(2, 1fr)
+    gap: space.$md-16
+
+    @media screen and (max-width: 560px)
+      grid-template-columns: 1fr
+</style>

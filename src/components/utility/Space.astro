@@ -1,0 +1,20 @@
+---
+import { rem } from "@util/units/rem";
+
+interface Props {
+  space: number;
+}
+
+const { space } = Astro.props;
+---
+
+<div class="space"></div>
+<style
+  lang="sass"
+  define:vars={{
+    space: rem(space),
+  }}
+>
+  .space
+    height: var(--space)
+</style>

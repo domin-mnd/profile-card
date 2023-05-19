@@ -1,0 +1,33 @@
+---
+import Banner from "@component/ui/Banner.astro";
+import Assets from "./Assets.astro";
+import Space from "@component/utility/Space.astro";
+
+interface Props {
+  bannerType: "image" | "color";
+  banner: string;
+  avatar: string;
+  status: Status;
+  badges: Badges;
+}
+
+const { bannerType, banner, avatar, status, badges } = Astro.props;
+---
+
+<div class="top-section">
+  <header>
+    {
+      bannerType === "image" ? (
+        <Banner href={banner} />
+      ) : bannerType === "color" ? (
+        <Banner color={banner} />
+      ) : null
+    }
+  </header>
+  <Assets avatar={avatar} status={status} badges={badges} />
+  {/* Discord uses 76 over the spacing system */}
+  <Space space={76} />
+</div>
+<style lang="sass">
+  @use "src/styles/utils/conversion" as *
+</style>
