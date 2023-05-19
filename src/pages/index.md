@@ -1,13 +1,13 @@
 ---
 # PLEASE DO NOT EDIT "layout"
-layout: ../layouts/Layout.astro
+layout: "../layouts/Layout.astro"
 # Banner type, can be either "color" or "image"
 bannerType: "color"
 # Banner color or an image depending on the banner type set above,
 # either provide a color inside quotes or a path to an image (external links are supported)
 banner: "#d0cdc3"
 # User avatar to display, can be external link or a path to an image from public folder
-avatar: https://cdn.discordapp.com/avatars/418306434317680641/b2dbf8037d99af65706882bbdf6390df.png
+avatar: "https://cdn.discordapp.com/avatars/418306434317680641/b2dbf8037d99af65706882bbdf6390df.png"
 # Discord custom nickname set above
 displayName: "Domin"
 # Username on discord, follows the case you set, won't track your Discord account e.g. "Domin#2874" or "dominnya"
@@ -15,36 +15,35 @@ username: "Domin#2874"
 # Discord status, can be "online-mobile", "online", "idle", "do-not-disturb", "invisible" or "streaming"
 status: "online"
 # Badges next to avatar, some badges need metadata such as "date" or "username"
-badges: {
-    "hypesquad-balance": {},
-    "active-developer": {},
-    # An example of metadata usage, you may uncomment following lines by removing "#":
-    # "nitro": {
-    #   date: "13 May 2020"
-    # },
-    # "legacy-username": {
-    #   username: "Domin#2874"
-    # },
-  }
+badges:
+  "hypesquad-balance": 
+  "active-developer":
+  # An example of metadata usage, you may uncomment following lines by removing "#":
+  # "nitro": {
+  #   date: "13 May 2020"
+  # },
+  # "legacy-username": {
+  #   username: "Domin#2874"
+  # },
 # Roles in profile: Key name stands for the label, value is the color
 roles:
-  {
-    "Fullstack Web Developer": "#006f72",
-    "UI/UX Designer": "#9b2335",
-    "FOSS Contributor": "#ffecc1",
-  }
+  "Fullstack Web Developer": "#006f72"
+  "UI/UX Designer": "#9b2335"
+  "FOSS Contributor": "#ffecc1"
 # Connections
 connections:
-  {
-    github: { username: "domin-mnd", url: "https://github.com/domin-mnd" },
-    reddit: { username: "Domin-MC", url: "https://www.reddit.com/u/Domin-MC" },
-    spotify:
-      {
-        username: "Domin",
-        url: "https://open.spotify.com/user/qzvkioir1rboe390cngafj94x",
-      },
-    twitter: { username: "Dominiff", url: "https://twitter.com/@dominiff" },
-  }
+  github:
+    username: "domin-mnd"
+    url: "https://github.com/domin-mnd"
+  reddit:
+    username: "Domin-MC"
+    url: "https://www.reddit.com/u/Domin-MC"
+  spotify:
+    username: "Domin"
+    url: "https://open.spotify.com/user/qzvkioir1rboe390cngafj94x"
+  twitter:
+    username: "Dominiff"
+    url: "https://twitter.com/@dominiff"
 ---
 
 <!-- Your About Me section -->
