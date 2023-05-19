@@ -14,7 +14,7 @@ displayName: "Domin"
 username: "Domin#2874"
 # Discord status, can be "online-mobile", "online", "idle", "do-not-disturb", "invisible" or "streaming"
 status: "online"
-# Badges next to avatar, some badges need metadata such as "date" or "username"
+# Badges next to avatar, some badges need metadata such as "date" or "username", all name are available at public/badges folder
 badges:
   "hypesquad-balance": 
   "active-developer":
@@ -30,7 +30,7 @@ roles:
   "Fullstack Web Developer": "#006f72"
   "UI/UX Designer": "#9b2335"
   "FOSS Contributor": "#ffecc1"
-# Connections
+# Connections, all connections are available at public/connections folder
 connections:
   github:
     username: "domin-mnd"
