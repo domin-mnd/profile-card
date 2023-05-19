@@ -23,6 +23,7 @@ import Info from "@component/ui/Info.astro";
 
 import Flex from "@component/utility/Flex.astro";
 import Favicon from "@component/layout/Favicon.astro";
+import Meta from "@component/layout/Meta.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -33,6 +34,7 @@ const { frontmatter } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <Meta title={frontmatter.displayName} />
     <Favicon />
     <title>{frontmatter.displayName}</title>
   </head>

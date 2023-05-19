@@ -16,7 +16,7 @@ username: "Domin#2874"
 status: "online"
 # Badges next to avatar, some badges need metadata such as "date" or "username", all name are available at public/badges/margins folder
 badges:
-  "hypesquad-balance": 
+  "hypesquad-balance":
   "active-developer":
   # An example of metadata usage, you may uncomment following lines by removing "#":
   # "nitro": {
