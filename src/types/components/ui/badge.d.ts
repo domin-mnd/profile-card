@@ -31,6 +31,7 @@ type Badge =
   | "server-owner"
   | "supports-slash-commands";
 
+/** Compare type with "date" metadata */
 type DateBadge =
   | "boost-1-month"
   | "boost-2-month"
@@ -43,9 +44,13 @@ type DateBadge =
   | "boost-24-month"
   | "nitro";
 
+/** Compare type with "username" metadata */
 type UsernameBadge = "legacy-username";
 
-interface BadgeData {
-  date?: Badge extends keyof typeof DateBadge ? string : never;
-  username?: Badge extends keyof typeof UsernameBadge ? string : never;
+/** Badge metadata object with all available metadata keys */
+interface BadgeData<PromptBadge> {
+  /** Include date if badge type is "date" */
+  date?: PromptBadge extends keyof typeof DateBadge ? string : never;
+  /** Include date if badge type is "usernemae" */
+  username?: PromptBadge extends keyof typeof UsernameBadge ? string : never;
 }

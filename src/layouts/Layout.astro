@@ -73,6 +73,7 @@ const { frontmatter } = Astro.props;
                   type={connection as Connection}
                   username={frontmatter.connections[connection].username}
                   url={frontmatter.connections[connection].url}
+                  verified={frontmatter.connections[connection].verified}
                 />
               ))
             }

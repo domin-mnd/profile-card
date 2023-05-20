@@ -14,7 +14,8 @@ displayName: "Domin"
 username: "Domin#2874"
 # Discord status, can be "online-mobile", "online", "idle", "do-not-disturb", "invisible" or "streaming"
 status: "online"
-# Badges next to avatar, some badges need metadata such as "date" or "username", all name are available at public/badges/margins folder
+# Badges next to avatar, some badges need metadata such as "date" or "username"
+# all names are available at public/badges/margins folder
 badges:
   "hypesquad-balance":
   "active-developer":
@@ -31,19 +32,25 @@ roles:
   "UI/UX Designer": "#9b2335"
   "FOSS Contributor": "#ffecc1"
 # Connections, all connections are available at public/connections folder
+# "verified" key is optional but indicates verified icon
+# if "url" key is not provided, then the external link icon won't appear
 connections:
   github:
     username: "domin-mnd"
     url: "https://github.com/domin-mnd"
+    verified: true
   reddit:
     username: "Domin-MC"
     url: "https://www.reddit.com/u/Domin-MC"
+    verified: true
   spotify:
     username: "Domin"
     url: "https://open.spotify.com/user/qzvkioir1rboe390cngafj94x"
+    verified: true
   twitter:
     username: "Dominiff"
     url: "https://twitter.com/@dominiff"
+    verified: true
 ---
 
 <!-- Your About Me section -->

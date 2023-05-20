@@ -2,6 +2,7 @@
 import Link from "@component/icons/Link.astro";
 import Flex from "@component/utility/Flex.astro";
 import Tooltip from "./Tooltip.astro";
+import Verified from "@component/icons/Verified.astro";
 
 /** Connection container component */
 interface Props {
@@ -11,6 +12,8 @@ interface Props {
   username: string;
   /** URL of the connection, link icon won't be passed if no url passed */
   url?: string;
+  /** Verified indicator metadata */
+  verified?: boolean;
 }
 
 /** Labels for tooltips of each connection type */
@@ -37,7 +40,7 @@ const tooltipLabels = {
   "youtube": "YouTube",
 }
 
-const { type, username, url } = Astro.props;
+const { type, username, url, verified = false } = Astro.props;
 ---
 
 <Flex align="center" justify="space-between" class="connection">
@@ -51,7 +54,10 @@ const { type, username, url } = Astro.props;
         class="icon"
       />
     </Tooltip>
-    <span class="username">{username}</span>
+    <Flex align="center" gap={4}>
+      <span class="username">{username}</span>
+      {verified && <Verified />}
+    </Flex>
   </Flex>
   {url && <Link href={url} />}
 </Flex>
