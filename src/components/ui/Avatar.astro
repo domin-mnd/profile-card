@@ -1,22 +1,28 @@
 ---
-import { Image } from "@astrojs/image/components";
+import {
+  Image,
+  ImageComponentRemoteImageProps,
+} from "@astrojs/image/components";
 
-interface Props {
-  src: string;
-  class?: string;
+// Remove width, height & children from the origin component props,
+// instead pass size prop
+type Props = Omit<
+  ImageComponentRemoteImageProps,
+  "width" | "height" | "slot" | "alt"
+> & {
   size: number;
-}
+};
 
-const { src, size, class: additionalClass } = Astro.props;
+const { size, class: additionalClass, ...props } = Astro.props;
 ---
 
 <Image
   class:list={["avatar", additionalClass]}
-  src={src}
   aspectRatio={1}
   alt="Avatar"
   width={size}
   height={size}
+  {...props}
 />
 <style lang="sass">
   @use "src/styles/utils/conversion" as *
