@@ -2,10 +2,15 @@
 import { rem } from '@util/units/rem';
 import type { HTMLAttributes } from 'astro/types';
 
+/** "display: flex;" shorthand component */
 interface Props extends HTMLAttributes<'div'> {
+  /** justify-content shorthand */
   justify?: string;
+  /** align-items shorthand */
   align?: string;
+  /** flex-wrap shorthand */
   wrap?: string;
+  /** gap shorthand */
   gap?: number;
 }
 

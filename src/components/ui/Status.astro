@@ -2,8 +2,11 @@
 import { capitalize } from "@util/parser/capitalize";
 import Tooltip from "./Tooltip.astro";
 
+/** Filled status icon */
 interface Props {
+  /** Status type without "typing" & "screen-sharing" */
   type: Status;
+  /** @todo remove hardcode */
   class?: string;
 }
 

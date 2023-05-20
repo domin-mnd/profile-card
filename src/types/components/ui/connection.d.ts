@@ -1,3 +1,4 @@
+/** All available connection types + removed skype connection */
 type Connection =
   | "paypal"
   | "reddit"

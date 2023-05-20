@@ -1,11 +1,16 @@
 ---
 import Tooltip from "./Tooltip.astro";
 
+/** Badge icon component */
 interface Props {
+  /** The type of a badge taken from public route */
   type: Badge;
+  /** Metadata of the badge, can be either username or date string */
   metadata: string | undefined;
+  // ^ doesn't use "exactOptionalPropertyTypes": true, so we pass "| undefined"
 }
 
+// Labels for every tooltip
 const tooltipLabels = {
   "active-developer": "Active Developer",
   "boost-1-month": "Server Boosting since",

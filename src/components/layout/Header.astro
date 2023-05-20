@@ -3,11 +3,17 @@ import Banner from "@component/ui/Banner.astro";
 import Assets from "./Assets.astro";
 import Space from "@component/utility/Space.astro";
 
+/** Header top section wrapping banner, assets & space inside */
 interface Props {
-  bannerType: "image" | "color";
+  /** Banner type */
+  bannerType: BannerType;
+  /** Link or a color model of the banner */
   banner: string;
+  /** A href or path to an avatar */
   avatar: string;
+  /** Status type without "typing" & "screen-sharing" */
   status: Status;
+  /** Badge type as the name with the object metadata */
   badges: Badges;
 }
 

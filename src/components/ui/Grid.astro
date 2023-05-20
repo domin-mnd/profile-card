@@ -1,7 +1,13 @@
+---
+// May go into layout component folder but I don't think I have to make one responsive for every use case
+/** 2 column grid for connections, turns into 1 collumn for <=560 pixels */
+---
+
 <div class="grid">
   <slot />
 </div>
 <style lang="sass">
+  @use "src/styles/utils/conversion" as *
   @use "src/styles/theme/space"
 
   .grid
@@ -10,6 +16,6 @@
     grid-template-columns: repeat(2, 1fr)
     gap: space.$md-16
 
-    @media screen and (max-width: 560px)
+    @media screen and (max-width: rem(560))
       grid-template-columns: 1fr
 </style>

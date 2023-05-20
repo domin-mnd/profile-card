@@ -1,3 +1,4 @@
+/** All available badge types */
 type Badge =
   | "active-developer"
   | "boost-1-month"

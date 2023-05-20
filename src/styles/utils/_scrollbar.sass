@@ -11,6 +11,8 @@
 
   &::-webkit-scrollbar-thumb
     background: $foreground-color
+
+    // Average Discord styling
     background-clip: padding-box
     border: space.$xs-2 solid transparent
     border-radius: rounding.$xs-4
@@ -25,6 +27,8 @@
 
     // For Firefox
     scrollbar-color: $foreground-color $background-color
+
+    // scrollbar-width doesn't support any other units but none & thin
     @if $size == 0px
       scrollbar-width: none
     @else if $size <= 10px

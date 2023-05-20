@@ -1,15 +1,23 @@
 ---
 import { Picture } from "@astrojs/image/components";
 
+/** Href only component, considered an image banner */
 interface HrefOnly {
+  /** Cannot pass color in image banner */
   color?: never;
+  /** A link to a banner image, won't be stretched as object-fit: cover; is used */
   href: string;
 }
+
+/** Color only component, considered a color banner */
 interface ColorOnly {
+  /** Color of the banner, height will be smaller comparing to image banner for obvious reasons */
   color: string;
+  /** Cannot pass href in color banner */
   href?: never;
 }
 
+/** A union of either color or image banner */
 type Props = HrefOnly | ColorOnly;
 
 const { href, color } = Astro.props;

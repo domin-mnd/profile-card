@@ -6,9 +6,13 @@ import Flex from "@component/utility/Flex.astro";
 import Relative from "@component/utility/Relative.astro";
 import Badges from "./Badges.astro";
 
+/* Levitating assets for upper information */
 interface Props {
+  /** A href or path to an avatar */
   avatar: string;
+  /** Status type without "typing" & "screen-sharing" */
   status: Status;
+  /** Badge type as the name with the object metadata */
   badges: Badges;
 }
 

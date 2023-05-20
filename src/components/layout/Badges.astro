@@ -2,7 +2,9 @@
 import Badge from "@component/ui/Badge.astro";
 import type { HTMLAttributes } from "astro/types";
 
+/** Box with badges */
 interface Props extends HTMLAttributes<"div"> {
+  /** Badge type as the name with the object metadata */
   badges: Badges;
 }
 

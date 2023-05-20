@@ -6,10 +6,12 @@ import {
 
 // Remove width, height & children from the origin component props,
 // instead pass size prop
+/** Rounded image with a set size using astro's image optimization component */
 type Props = Omit<
   ImageComponentRemoteImageProps,
   "width" | "height" | "slot" | "alt"
 > & {
+  /** Width & height of the avatar (aspect ratio is 1) */
   size: number;
 };
 

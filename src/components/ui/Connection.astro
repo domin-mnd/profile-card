@@ -3,13 +3,18 @@ import Link from "@component/icons/Link.astro";
 import Flex from "@component/utility/Flex.astro";
 import Tooltip from "./Tooltip.astro";
 
+/** Connection container component */
 interface Props {
+  /** A type of the connection + removed skype connection */
   type: Connection;
+  /** Username from the connection used */
   username: string;
+  /** URL of the connection, link icon won't be passed if no url passed */
   url?: string;
 }
 
-const typeLabels = {
+/** Labels for tooltips of each connection type */
+const tooltipLabels = {
   "paypal": "PayPal",
   "reddit": "Reddit",
   "steam": "Steam",
@@ -37,7 +42,7 @@ const { type, username, url } = Astro.props;
 
 <Flex align="center" justify="space-between" class="connection">
   <Flex align="center" gap={8}>
-    <Tooltip label={typeLabels[type]}>
+    <Tooltip label={tooltipLabels[type]}>
       <img
         src={`/connections/${type}.svg`}
         alt={`Connection - ${type}`}

@@ -1,7 +1,9 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+/** Custom tooltip component similar to Discord's */
 interface Props extends HTMLAttributes<"div"> {
+  /** Required label to show on the page */
   label: string;
 }
 
