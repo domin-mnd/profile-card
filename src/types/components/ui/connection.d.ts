@@ -2,6 +2,7 @@ type Connection =
   | "paypal"
   | "reddit"
   | "steam"
+  | "skype"
   | "tiktok"
   | "twitter"
   | "ebay"
