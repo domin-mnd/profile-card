@@ -1,17 +1,17 @@
 ---
 import { capitalize } from "@util/parser/capitalize";
 import Tooltip from "./Tooltip.astro";
+import type { HTMLAttributes } from "astro/types";
 
 /** Filled status icon */
-interface Props {
+interface Props extends Omit<HTMLAttributes<"div">, "slot"> {
   /** Status type without "typing" & "screen-sharing" */
   type: Status;
-  /** @todo remove hardcode */
-  class?: string;
 }
 
-const { type, class: additionalClass } = Astro.props;
+const { type, class: additionalClass, ...props } = Astro.props;
 
+// Could use tooltipLabels approach as with everything else, CBA
 const parseStatus = (status: Status): string =>
   capitalize(
     status
@@ -23,7 +23,7 @@ const parseStatus = (status: Status): string =>
 const tooltip = parseStatus(type);
 ---
 
-<Tooltip label={tooltip} class={additionalClass}>
+<Tooltip label={tooltip} class={additionalClass} {...props}>
   <img src={`/status/filled/${type}.svg`} alt={tooltip} class="status" />
 </Tooltip>
 <style lang="sass">
