@@ -1,5 +1,5 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 /** Href only component, considered an image banner */
 interface HrefOnly {
@@ -26,13 +26,11 @@ const { href, color } = Astro.props;
 <div class="upper">
   {
     href ? (
-      <Picture
-        class="image"
+      <Image
         class:list={["image", "banner"]}
         src={href}
-        formats={['webp']}
-        widths={[600, 1200]}
-        aspectRatio="150:53"
+        width={600}
+        height={212}
         alt="banner"
       />
     ) : (
@@ -53,6 +51,7 @@ const { href, color } = Astro.props;
     margin: - space.$md-16
     margin-bottom: space.$md-16
     max-width: calc(100% + space.$lg-32)
+    aspect-ratio: 150 / 53
 
   .color
     background-color: var(--color)

@@ -1,14 +1,14 @@
 ---
 import {
   Image,
-  ImageComponentRemoteImageProps,
-} from "@astrojs/image/components";
+  RemoteImageProps,
+} from "astro:assets";
 
 // Remove width, height & children from the origin component props,
 // instead pass size prop
 /** Rounded image with a set size using astro's image optimization component */
 type Props = Omit<
-  ImageComponentRemoteImageProps,
+  RemoteImageProps,
   "width" | "height" | "slot" | "alt"
 > & {
   /** Width & height of the avatar (aspect ratio is 1) */
@@ -20,7 +20,6 @@ const { size, class: additionalClass, ...props } = Astro.props;
 
 <Image
   class:list={["avatar", additionalClass]}
-  aspectRatio={1}
   alt="Avatar"
   width={size}
   height={size}
@@ -35,4 +34,5 @@ const { size, class: additionalClass, ...props } = Astro.props;
   .avatar
     border-radius: rounding.$circle
     border: rem(9) solid colors.$card
+    aspect-ratio: 1
 </style>
