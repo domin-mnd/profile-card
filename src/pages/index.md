@@ -72,8 +72,10 @@ connections:
 <!-- Your About Me section -->
 
 
-Hi, I'm Junior Software Developer based in Bangkok, Thailand.
+Hi, I'm Junior Software Developer based in Bangkok, Thailand 🇹🇭.
 
 I mostly work with [Bot Development](https://sites.google.com/email.kmutnb.ac.th/xeno/work) & [Website Development](https://xenodev.tech)
+
+[About Me More]()
 
 📖 I'm studying at King Mongkut's University of Technology North Bangkok(KMUTNB) | B.Sc.Mathematics with Computer Science(MC)
