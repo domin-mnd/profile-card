@@ -21,8 +21,7 @@ badges:
   "hypesquad-balance":
   "active-developer":
   # An example of metadata usage, you may uncomment following lines by removing "#":
-  # "nitro":
-  #   date: "13 May 2020"
+  "nitro": date: "27 December 2023"
   "legacy-username":
     username: "! 𝗫𝗲𝗻𝗼#8192"
 # Roles in profile: Key name stands for the label, value is the color
